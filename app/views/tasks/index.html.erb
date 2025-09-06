@@ -1,0 +1,10 @@
+<h1>Tasks</h1>
+
+<div id="tasks-list">
+  <%= render @tasks %>
+</div>
+
+<%= form_with(model: Task.new, remote: true, html: { id: "new_task_form" }) do |f| %>
+  <%= f.text_field :title, placeholder: "Task title" %>
+  <%= f.submit "Add Task" %>
+<% end %>
